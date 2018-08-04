@@ -32,11 +32,7 @@ export class Hello extends React.Component<Props, State> {
   render() {
     return (
       <View style={styles.root}>
-        <Text style={styles.greeting}>
-          Hello!!!{" "}
-          {this.props.name +
-            this.getExclamationMarks(this.state.enthusiasmLevel)}
-        </Text>
+        <Text style={styles.greeting}>Hello!!!</Text>
         <Text>World!!!</Text>
         <View style={styles.buttons}>
           <View style={styles.button}>
@@ -45,7 +41,7 @@ export class Hello extends React.Component<Props, State> {
               onPress={this.onDecrement}
               accessibilityLabel="decrement"
               color="red"
-              id="hello_button"
+              testID="hello_button"
             />
           </View>
 
@@ -55,7 +51,7 @@ export class Hello extends React.Component<Props, State> {
               onPress={this.onIncrement}
               accessibilityLabel="increment"
               color="blue"
-              id="world_button"
+              testID="world_button"
             />
           </View>
         </View>

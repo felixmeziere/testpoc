@@ -1,5 +1,15 @@
 set -ex
+
 brew uninstall node@6
-NODE_VERSION="10.7.0"
-curl "https://nodejs.org/dist/v${NODE_VERSION}/node-v${NODE_VERSION}.pkg" > "$HOME/Downloads/node-installer.pkg"
-sudo installer -store -pkg "$HOME/Downloads/node-installer.pkg" -target "/"
+
+echo "Installing NVM..."
+brew install nvm
+source $(brew --prefix nvm)/nvm.sh
+
+echo "Installing node 10..."
+nvm install v10.7.0
+nvm use --delete-prefix v10.7.0
+nvm alias default v10.7.0
+
+echo "Identifying selected node version..."
+node --version
