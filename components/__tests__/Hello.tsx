@@ -6,7 +6,7 @@ import { Hello } from "../Hello";
 
 it("renders correctly with defaults", () => {
   const button = renderer
-    .create(<Hello name="World" enthusiasmLevel={1} />)
+    .create(<Hello id="welcome" name="World" enthusiasmLevel={1} />)
     .toJSON();
   expect(button).toMatchSnapshot();
 });
