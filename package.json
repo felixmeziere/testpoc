@@ -38,7 +38,7 @@
         "binaryPath": "ios/build/Build/Products/Debug-iphonesimulator/testsPoc.app",
         "build": "xcodebuild -workspace ios/testsPoc.xcworkspace -scheme testsPoc -configuration Debug -sdk iphonesimulator -derivedDataPath ios/build",
         "type": "ios.simulator",
-        "name": "iPhone 7"
+        "name": "iPhone 8"
       }
     },
     "test-runner": "jest",
