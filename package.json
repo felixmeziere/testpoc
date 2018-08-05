@@ -4,7 +4,10 @@
   "private": true,
   "scripts": {
     "start": "node node_modules/react-native/local-cli/cli.js start",
-    "test": "jest"
+    "test": "JEST_ENV=local jest",
+    "test-ci": "JEST_ENV=ci jest",
+    "detox-build": "detox build --configuration ios.sim.debug",
+    "detox-test": "detox test --configuration ios.sim.debug"
   },
   "dependencies": {
     "appcenter": "^1.7.1",
@@ -37,6 +40,12 @@
       "ios.sim.debug": {
         "binaryPath": "ios/build/Build/Products/Debug-iphonesimulator/testsPoc.app",
         "build": "xcodebuild -workspace ios/testsPoc.xcworkspace -scheme testsPoc -configuration Debug -sdk iphonesimulator -derivedDataPath ios/build",
+        "type": "ios.simulator",
+        "name": "iPhone 8"
+      },
+      "ios.sim.release": {
+        "binaryPath": "ios/build/Build/Products/Release-iphonesimulator/testsPoc.app",
+        "build": "xcodebuild -workspace ios/testsPoc.xcworkspace -scheme testsPoc -configuration Release -sdk iphonesimulator -derivedDataPath ios/build",
         "type": "ios.simulator",
         "name": "iPhone 8"
       }

@@ -31,8 +31,9 @@ echo "Installing dependencies for detox tests..."
 yarn
 
 echo "Building the project..."
-detox build
+detox build --configuration ios.sim.release
 
 echo "Executing tests..."
 yarn start &
-yarn test
+sleep 30s
+yarn test-ci

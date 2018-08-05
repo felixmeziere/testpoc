@@ -1,3 +1,11 @@
+process.argv.push("--configuration");
+if (process.env.JEST_ENV === "ci") {
+  process.argv.push("ios.sim.release");
+  process.argv.push("--cleanup");
+} else {
+  process.argv.push("ios.sim.debug");
+}
+
 const detox = require("detox");
 const config = require("../package.json").detox;
 const adapter = require("detox/runners/jest/adapter");
